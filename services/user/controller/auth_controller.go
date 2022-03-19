@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 
-	// grpc_client "github.com/nhatlang19/go-monorepo/services/user/client"
 	"github.com/nhatlang19/go-monorepo/services/user/model"
 	"github.com/nhatlang19/go-monorepo/services/user/service"
 )
@@ -33,7 +32,11 @@ func (u authController) Register(c *gin.Context) {
 		return
 	}
 
-	// grpc_client.handleRegisterMail()
+	user, err := u.userService.Save(user)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Error while saving user"})
+		return
+	}
 
 	c.JSON(http.StatusOK, gin.H{"data": user})
 }

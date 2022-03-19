@@ -16,8 +16,10 @@ type server struct {
 
 func (s *server) SendRegisterMail(ctx context.Context, in *mailpb.RegisterMailRequest) (*mailpb.RegisterMailResponse, error) {
 	log.Println("SendRegisterMail called")
-
-	return nil, nil
+	resp := &mailpb.RegisterMailResponse{
+		Status: true,
+	}
+	return resp, nil
 }
 
 func main() {

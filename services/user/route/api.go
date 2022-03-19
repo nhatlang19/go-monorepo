@@ -1,19 +1,21 @@
 package route
 
-
 import (
 	"github.com/nhatlang19/go-monorepo/services/user/controller"
 	// "github.com/nhatlang19/go-monorepo/services/user/middleware"
+	"log"
+
 	"github.com/nhatlang19/go-monorepo/services/user/repository"
 	"github.com/nhatlang19/go-monorepo/services/user/service"
-	"log"
+
+	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
-	"net/http"
-	"time"
-)
 
+	client "github.com/nhatlang19/go-monorepo/services/user/client"
+)
 
 func SetupRoutes(db *gorm.DB) {
 	httpRouter := gin.Default()
@@ -23,7 +25,9 @@ func SetupRoutes(db *gorm.DB) {
 	if err := userRepository.Migrate(); err != nil {
 		log.Fatal("User migrate err", err)
 	}
-	userService := service.NewUserService(userRepository)
+
+	mailClient := client.NewMailClient()
+	userService := service.NewUserService(userRepository, mailClient)
 
 	authController := controller.NewAuthController(userService)
 
