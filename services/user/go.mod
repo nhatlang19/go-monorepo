@@ -4,8 +4,8 @@ go 1.18
 
 require (
 	github.com/gin-gonic/gin v1.7.7
-	github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319145206-796964e1fe84
-	github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319145206-796964e1fe84
+	github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319150653-626599b2f5d5
+	github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319150653-626599b2f5d5
 	google.golang.org/grpc v1.45.0
 	gorm.io/gorm v1.23.3
 )
