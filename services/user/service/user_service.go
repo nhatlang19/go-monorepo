@@ -1,6 +1,9 @@
 package service
 
 import (
+	"os"
+	"strconv"
+
 	helper "github.com/nhatlang19/go-monorepo/pkg/helper"
 	grpc_client "github.com/nhatlang19/go-monorepo/services/user/client"
 	"github.com/nhatlang19/go-monorepo/services/user/model"
@@ -29,8 +32,18 @@ func (u userService) Save(user model.User) (model.User, error) {
 	log.Print("[UserService]...Save")
 	user.Password, _ = helper.HashPassword(user.Password)
 	user, err := u.userRepository.Save(user)
+	if err != nil {
+		panic(err)
+	}
 
-	u.mailClient.HandleRegisterMail(user)
+	enable_mail, err := strconv.ParseBool(os.Getenv("SEND_MAIL"))
+	if err != nil {
+		panic(err)
+	}
+
+	if enable_mail {
+		u.mailClient.HandleRegisterMail(user)
+	}
 
 	return user, err
 }

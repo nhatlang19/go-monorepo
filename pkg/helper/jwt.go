@@ -45,8 +45,8 @@ func (j jwtToken) ExtractToken(bearToken string) string {
 	return ""
 }
 
-func (j jwtToken) VerifyToken(token string) (*jwt.Token, error) {
-	tokenString := j.ExtractToken(token)
+func (j jwtToken) VerifyToken(tokenStr string) (*jwt.Token, error) {
+	tokenString := j.ExtractToken(tokenStr)
 	token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
