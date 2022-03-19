@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/gin-gonic/gin v1.7.7
-	github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319101427-7909a4d3e7e4
+	github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319103023-f6b0a6d1394c
 	gorm.io/gorm v1.23.3
 )
 
@@ -22,6 +22,7 @@ require (
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
+	github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319103023-f6b0a6d1394c // indirect
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	golang.org/x/crypto v0.0.0-20220315160706-3147a52a75dd // indirect
 	golang.org/x/sys v0.0.0-20220318055525-2edf467146b5 // indirect

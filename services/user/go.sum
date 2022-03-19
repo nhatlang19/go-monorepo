@@ -65,8 +65,12 @@ github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742 h1:Esafd1046DLD
 github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742/go.mod h1:bx2lNnkwVCuqBIxFjflWJWanXIb3RllmbCylyMrvgv0=
 github.com/modern-go/reflect2 v1.0.2 h1:xBagoLtFs94CBntxluKeaWgTMpvLxC4ur3nMaC9Gz0M=
 github.com/modern-go/reflect2 v1.0.2/go.mod h1:yWuevngMOJpCy52FWWMvUC8ws7m/LJsjYzDa0/r8luk=
+github.com/nhatlang19/go-monorepo v0.0.0-20220319103023-f6b0a6d1394c h1:zCB1DbhhQKijuGSkEuyKDsDw4iTj3eIGDdsmvLB5idg=
+github.com/nhatlang19/go-monorepo v0.0.0-20220319103023-f6b0a6d1394c/go.mod h1:NFRyDYIiXgSoIX/B1orM4bzF7IvcmHAlKX775lwAzEE=
 github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319101427-7909a4d3e7e4 h1:SnK/Ja38zn1mlD72YJMDEUu3Cqm84S0S3iVpYciUcj4=
 github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319101427-7909a4d3e7e4/go.mod h1:R1Og7afLcXv3sTDWtSV4mEPuP0YeILJrg7CtwSBq2zY=
+github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319103023-f6b0a6d1394c h1:PLe8APUwY/o8HV2yZg6sDVSyhkfQEv3LhGj9EN7khQc=
+github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319103023-f6b0a6d1394c/go.mod h1:iddu3heNTCsBbq7T4xzLnx3QKMqlziHP/UUfPqY/1TM=
 github.com/pkg/diff v0.0.0-20210226163009-20ebb0f2a09e/go.mod h1:pJLUxLENpZxwdsKMEsNbx1VGcRFpLqf3715MtcvvzbA=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/rogpeppe/go-internal v1.6.1/go.mod h1:xXDCJY+GAPziupqXw64V24skbSoqbTEfhy4qGm1nDQc=
