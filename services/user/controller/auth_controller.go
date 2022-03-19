@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/nhatlang19/go-monorepo/pkg/helper"
 	"github.com/nhatlang19/go-monorepo/services/user/model"
 	"github.com/nhatlang19/go-monorepo/services/user/service"
 )
@@ -24,6 +25,10 @@ func NewAuthController(s service.UserService) AuthController {
 	}
 }
 
+type Auth struct {
+	Jwt string `json:"jwt"`
+}
+
 func (u authController) Register(c *gin.Context) {
 	log.Print("[AuthController]...Register")
 	var user model.User
@@ -38,5 +43,11 @@ func (u authController) Register(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"data": user})
+	token, err := helper.CreateToken(uint64(user.ID))
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Can not generate token"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"data": Auth{Jwt: token}})
 }

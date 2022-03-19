@@ -4,8 +4,8 @@ go 1.18
 
 require (
 	github.com/gin-gonic/gin v1.7.7
-	github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319120616-db448f866074
-	github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319120616-db448f866074
+	github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319145206-796964e1fe84
+	github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319145206-796964e1fe84
 	google.golang.org/grpc v1.45.0
 	gorm.io/gorm v1.23.3
 )
@@ -28,7 +28,7 @@ require (
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	golang.org/x/crypto v0.0.0-20220315160706-3147a52a75dd // indirect
 	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
-	golang.org/x/sys v0.0.0-20220318055525-2edf467146b5 // indirect
+	golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/genproto v0.0.0-20220317150908-0efb43f6373e // indirect
 	google.golang.org/protobuf v1.27.1 // indirect

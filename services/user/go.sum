@@ -94,10 +94,14 @@ github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319112607-1c29852c20f0 h1:GyBt
 github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319112607-1c29852c20f0/go.mod h1:iddu3heNTCsBbq7T4xzLnx3QKMqlziHP/UUfPqY/1TM=
 github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319120616-db448f866074 h1:1f1T65hhnmR6Zy2joKUYnBYnJPjPw4Trv18y8um55jA=
 github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319120616-db448f866074/go.mod h1:iddu3heNTCsBbq7T4xzLnx3QKMqlziHP/UUfPqY/1TM=
+github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319145206-796964e1fe84 h1:nj9L1R2j9hwg1zLUW4S/66rkwNPv2JtVt2hjF8zXXao=
+github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319145206-796964e1fe84/go.mod h1:VCZRofacZM1WguAzKEv+rI/qSMhjKObLQiWI8gCiVZ0=
 github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319112607-1c29852c20f0 h1:pYVl/TvFXaLODJuYDEjBh6/YxiNGy+tRrfGFWQh7TIw=
 github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319112607-1c29852c20f0/go.mod h1:eveoFG/1q84krM0bDq0CTApJ3uE9tPi9WWyBDkfZypo=
 github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319120616-db448f866074 h1:fvH97wPCI/YbJP7FA+a/veSY807Cy/tDRsM1GDsl3+g=
 github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319120616-db448f866074/go.mod h1:eveoFG/1q84krM0bDq0CTApJ3uE9tPi9WWyBDkfZypo=
+github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319145206-796964e1fe84 h1:iLUfQ/v++xAWRHbtIpsKomSg4S4WAzTInEdHCtvrhco=
+github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319145206-796964e1fe84/go.mod h1:eveoFG/1q84krM0bDq0CTApJ3uE9tPi9WWyBDkfZypo=
 github.com/pkg/diff v0.0.0-20210226163009-20ebb0f2a09e/go.mod h1:pJLUxLENpZxwdsKMEsNbx1VGcRFpLqf3715MtcvvzbA=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
@@ -157,6 +161,8 @@ golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c/go.mod h1:oPkhp1MJrh7nUepCBc
 golang.org/x/sys v0.0.0-20210806184541-e5e7981a1069/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20220318055525-2edf467146b5 h1:saXMvIOKvRFwbOMicHXr0B1uwoxq9dGmLe5ExMES6c4=
 golang.org/x/sys v0.0.0-20220318055525-2edf467146b5/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8 h1:OH54vjqzRWmbJ62fjuhxy7AxFFgoHN0/DPc/UrL8cAs=
+golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1/go.mod h1:bj7SfCRtBDWHUb9snDiAeCFNEtKQo2Wmx5Cou7ajbmo=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/text v0.3.2/go.mod h1:bEr9sfX3Q8Zfm5fL9x+3itogRgK3+ptLWKqgva+5dAk=
