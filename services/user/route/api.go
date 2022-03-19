@@ -28,7 +28,7 @@ func SetupRoutes(db *gorm.DB) {
 	authController := controller.NewAuthController(userService)
 
 	auth := httpRouter.Group("auth")
-	auth.POST("/", authController.Register)
+	auth.POST("/register", authController.Register)
 
 	httpRouter.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"service": "User", "timestamp": time.Now()})

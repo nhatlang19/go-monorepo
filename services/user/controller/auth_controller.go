@@ -31,5 +31,11 @@ func (u authController) Register(c *gin.Context) {
 		return
 	}
 
+	user, err := u.userService.Save(user)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Error while saving user"})
+		return
+	}
+
 	c.JSON(http.StatusOK, gin.H{"data": user})
 }

@@ -3,7 +3,7 @@ package service
 import (
 	"github.com/nhatlang19/go-monorepo/services/user/model"
 	"github.com/nhatlang19/go-monorepo/services/user/repository"
-	// helper "github.com/nhatlang19/go-monorepo/pkg/helper"
+	helper "github.com/nhatlang19/go-monorepo/pkg/helper"
 	"log"
 )
 
@@ -23,6 +23,6 @@ func NewUserService (r repository.UserRepository) UserService {
 
 func (u userService) Save(user model.User) (model.User, error) {
 	log.Print("[UserService]...Save")
-	// user.Password = helper.HashPassword(user.Password)
+	user.Password, _ = helper.HashPassword(user.Password)
 	return u.userRepository.Save(user)
 }
