@@ -2,7 +2,7 @@ package client
 
 import (
 	"context"
-	"fmt"
+	"log"
 
 	"github.com/nhatlang19/go-monorepo/services/mail/mailpb"
 	"github.com/nhatlang19/go-monorepo/services/user/model"
@@ -34,10 +34,10 @@ func (m mailClient) HandleRegisterMail(user model.User) {
 	defer conn.Close()
 
 	c := mailpb.NewMailServiceClient(conn)
-	sum, err := c.SendRegisterMail(context.Background(), &mailpb.RegisterMailRequest{Email: user.Email})
+	status, err := c.SendRegisterMail(context.Background(), &mailpb.RegisterMailRequest{Email: user.Email})
 	if err != nil {
 		panic(err)
 	}
 
-	fmt.Println(sum)
+	log.Printf("[Mail] Register Email called %v", status)
 }
