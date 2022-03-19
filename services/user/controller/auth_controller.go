@@ -43,7 +43,8 @@ func (u authController) Register(c *gin.Context) {
 		return
 	}
 
-	token, err := helper.CreateToken(uint64(user.ID))
+	jwtToken := helper.NewJwtToken()
+	token, err := jwtToken.CreateToken(uint64(user.ID))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Can not generate token"})
 		return
