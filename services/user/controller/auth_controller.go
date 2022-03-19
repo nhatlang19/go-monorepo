@@ -1,12 +1,14 @@
 package controller
 
-import  (
+import (
 	"github.com/gin-gonic/gin"
 
+	"log"
+	"net/http"
+
+	// grpc_client "github.com/nhatlang19/go-monorepo/services/user/client"
 	"github.com/nhatlang19/go-monorepo/services/user/model"
 	"github.com/nhatlang19/go-monorepo/services/user/service"
-	"net/http"
-	"log"
 )
 
 type AuthController interface {
@@ -31,11 +33,7 @@ func (u authController) Register(c *gin.Context) {
 		return
 	}
 
-	user, err := u.userService.Save(user)
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Error while saving user"})
-		return
-	}
+	// grpc_client.handleRegisterMail()
 
 	c.JSON(http.StatusOK, gin.H{"data": user})
 }

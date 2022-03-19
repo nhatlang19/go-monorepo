@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package mail;
+
+option go_package="github.com/nhatlang19/go-monorepo/services/mail/mailpb;mailpb";
+
+service MailService {
+    rpc SendRegisterMail(RegisterMailRequest) returns (RegisterMailResponse) {}
+}
+
+message RegisterMailRequest {
+    string jwt = 1;
+}
+
+message RegisterMailResponse {
+    bool status = 1;
+}
