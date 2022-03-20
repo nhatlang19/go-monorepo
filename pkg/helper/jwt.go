@@ -26,7 +26,7 @@ func NewJwtToken() JwtToken {
 type UserInfo struct {
 	ID    uint64 `json:"id"`
 	Name  string `json:"name"`
-	Email string `json:"email`
+	Email string `json:"email"`
 }
 
 func (j jwtToken) CreateToken(user model.User) (string, error) {

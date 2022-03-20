@@ -50,7 +50,7 @@ func (u authController) Register(c *gin.Context) {
 	}
 
 	jwtToken := helper.NewJwtToken()
-	token, err := jwtToken.CreateToken(uint64(user.ID))
+	token, err := jwtToken.CreateToken(user)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Can not generate token"})
 		return
@@ -96,7 +96,7 @@ func (u authController) Login(c *gin.Context) {
 	}
 
 	jwtToken := helper.NewJwtToken()
-	token, err := jwtToken.CreateToken(uint64(user.ID))
+	token, err := jwtToken.CreateToken(user)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Can not generate token"})
 		return

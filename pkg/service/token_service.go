@@ -3,15 +3,15 @@ package service
 import (
 	"fmt"
 	"log"
-
+	"reflect"
+	"encoding/json"
 	"github.com/golang-jwt/jwt"
 
 	"github.com/nhatlang19/go-monorepo/pkg/helper"
-	"github.com/nhatlang19/go-monorepo/pkg/model"
 )
 
 type TokenService interface {
-	ValidateIDToken(string) (*model.User, error)
+	ValidateIDToken(string) (*helper.UserInfo, error)
 }
 
 type tokenService struct {
@@ -34,8 +34,15 @@ func (t tokenService) ValidateIDToken(tokenString string) (*helper.UserInfo, err
 		log.Printf("Invalid JwtToken - Error: %v\n", err)
 		return nil, fmt.Errorf("Invalid JwtToken")
 	}
+	fmt.Println("var1 = ", reflect.TypeOf(claims["user"]))
+	jsonbody, err := json.Marshal(claims["user"])
+    if err != nil {
+        return nil, err
+    }
 
-	user := claims["user"].(*helper.UserInfo)
-
-	return user, nil
+	user := helper.UserInfo{}
+	if err := json.Unmarshal(jsonbody, &user); err != nil {
+        return nil, err
+    }
+	return &user, nil
 }
