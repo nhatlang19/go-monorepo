@@ -1,8 +1,9 @@
 package repository
 
 import (
-	"github.com/nhatlang19/go-monorepo/services/user/model"
 	"log"
+
+	"github.com/nhatlang19/go-monorepo/services/user/model"
 
 	"gorm.io/gorm"
 )
@@ -10,8 +11,9 @@ import (
 type UserRepository interface {
 	Save(model.User) (model.User, error)
 	GetAll() ([]model.User, error)
+	GetByEmail(string) (model.User, error)
 	Migrate() error
-} 
+}
 
 type userRepository struct {
 	DB *gorm.DB
@@ -31,6 +33,13 @@ func (u userRepository) Migrate() error {
 func (u userRepository) Save(user model.User) (model.User, error) {
 	log.Print("[UserRepository]...Save")
 	err := u.DB.Create(&user).Error
+	return user, err
+}
+
+func (u userRepository) GetByEmail(email string) (model.User, error) {
+	log.Print("[UserRepository]...GetByEmail")
+	var user model.User
+	err := u.DB.Where("email = ?", email).First(&user).Error
 	return user, err
 }
 

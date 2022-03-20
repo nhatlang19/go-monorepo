@@ -13,6 +13,7 @@ import (
 
 type AuthController interface {
 	Register(*gin.Context)
+	Login(*gin.Context)
 }
 
 type authController struct {
@@ -50,5 +51,33 @@ func (u authController) Register(c *gin.Context) {
 		return
 	}
 
+	c.JSON(http.StatusOK, gin.H{"data": Auth{Jwt: token}})
+}
+
+type LoginRequest struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
+func (u authController) Login(c *gin.Context) {
+	log.Print("[AuthController]...Login")
+	loginRequest := LoginRequest{}
+	if err := c.ShouldBindJSON(&loginRequest); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	user, err, httpCode := u.userService.Login(loginRequest.Email, loginRequest.Password)
+
+	if err != nil {
+		c.JSON(httpCode, gin.H{"error": err.Error()})
+		return
+	}
+
+	jwtToken := helper.NewJwtToken()
+	token, err := jwtToken.CreateToken(uint64(user.ID))
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Can not generate token"})
+		return
+	}
 	c.JSON(http.StatusOK, gin.H{"data": Auth{Jwt: token}})
 }

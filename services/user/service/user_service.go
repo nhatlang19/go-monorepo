@@ -1,6 +1,7 @@
 package service
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 
@@ -14,6 +15,7 @@ import (
 
 type UserService interface {
 	Save(model.User) (model.User, error)
+	Login(email string, password string) (model.User, error, int)
 }
 
 type userService struct {
@@ -28,10 +30,29 @@ func NewUserService(r repository.UserRepository, m grpc_client.MailClient) UserS
 	}
 }
 
+func (u userService) Login(email string, password string) (model.User, error, int) {
+	log.Print("[UserService]...Login")
+
+	user, err := u.userRepository.GetByEmail(email)
+	if err != nil {
+		return user, fmt.Errorf("User Not Found"), 404
+	}
+
+	if !helper.CheckPasswordHash(password, user.Password) {
+		return user, fmt.Errorf("Password incorrect"), 403
+	}
+
+	return user, nil, 200
+}
+
 func (u userService) Save(user model.User) (model.User, error) {
 	log.Print("[UserService]...Save")
-	user.Password, _ = helper.HashPassword(user.Password)
-	user, err := u.userRepository.Save(user)
+	hashedPassword, err := helper.HashPassword(user.Password)
+	if err != nil {
+		panic(err)
+	}
+	user.Password = hashedPassword
+	user, err = u.userRepository.Save(user)
 	if err != nil {
 		panic(err)
 	}
