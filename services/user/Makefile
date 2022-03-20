@@ -1,5 +1,5 @@
 start:
 	go run main.go
 update-pkg:
-	go get -u github.com/nhatlang19/go-monorepo/pkg@1fe680768e5865d7a89012f8e616a76b8fbc715b && \
-	go get -u github.com/nhatlang19/go-monorepo/services/mail@1fe680768e5865d7a89012f8e616a76b8fbc715b
+	go get -u github.com/nhatlang19/go-monorepo/pkg@23409def8d3a504ee3b66fab49358a46d04d702e && \
+	go get -u github.com/nhatlang19/go-monorepo/services/mail@23409def8d3a504ee3b66fab49358a46d04d702e
