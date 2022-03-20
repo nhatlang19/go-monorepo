@@ -9,7 +9,7 @@ import (
 	"net/http"
 
 	"github.com/nhatlang19/go-monorepo/pkg/helper"
-	"github.com/nhatlang19/go-monorepo/services/user/model"
+	"github.com/nhatlang19/go-monorepo/pkg/model"
 	"github.com/nhatlang19/go-monorepo/services/user/service"
 
 	"github.com/go-playground/validator/v10"

@@ -7,10 +7,11 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt"
+	"github.com/nhatlang19/go-monorepo/pkg/model"
 )
 
 type JwtToken interface {
-	CreateToken(userid uint64) (string, error)
+	CreateToken(user model.User) (string, error)
 	ExtractToken(bearToken string) string
 	VerifyToken(token string) (*jwt.Token, error)
 }
@@ -22,11 +23,21 @@ func NewJwtToken() JwtToken {
 	return jwtToken{}
 }
 
-func (j jwtToken) CreateToken(userid uint64) (string, error) {
+type UserInfo struct {
+	ID    uint64 `json:"id"`
+	Name  string `json:"name"`
+	Email string `json:"email`
+}
+
+func (j jwtToken) CreateToken(user model.User) (string, error) {
 	var err error
 	atClaims := jwt.MapClaims{}
 	atClaims["authorized"] = true
-	atClaims["user_id"] = userid
+	atClaims["user"] = &UserInfo{
+		ID:    user.ID,
+		Name:  user.Name,
+		Email: user.Email,
+	}
 	atClaims["exp"] = time.Now().Add(time.Minute * 60).Unix()
 	at := jwt.NewWithClaims(jwt.SigningMethodHS256, atClaims)
 	token, err := at.SignedString([]byte(os.Getenv("ACCESS_SECRET")))
@@ -37,7 +48,6 @@ func (j jwtToken) CreateToken(userid uint64) (string, error) {
 }
 
 func (j jwtToken) ExtractToken(bearToken string) string {
-	//normally Authorization the_token_xxx
 	strArr := strings.Split(bearToken, " ")
 	if len(strArr) == 2 {
 		return strArr[1]

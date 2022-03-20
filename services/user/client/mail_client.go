@@ -4,8 +4,8 @@ import (
 	"context"
 	"log"
 
+	"github.com/nhatlang19/go-monorepo/pkg/model"
 	"github.com/nhatlang19/go-monorepo/services/mail/mailpb"
-	"github.com/nhatlang19/go-monorepo/services/user/model"
 	"google.golang.org/grpc"
 )
 

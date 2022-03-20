@@ -3,8 +3,10 @@ package route
 import (
 	"log"
 
+	pkg_middleware "github.com/nhatlang19/go-monorepo/pkg/middleware"
 	"github.com/nhatlang19/go-monorepo/services/user/controller"
-	"github.com/nhatlang19/go-monorepo/services/user/middleware"
+
+	pkg_service "github.com/nhatlang19/go-monorepo/pkg/service"
 
 	"github.com/nhatlang19/go-monorepo/services/user/repository"
 	"github.com/nhatlang19/go-monorepo/services/user/service"
@@ -32,12 +34,12 @@ func SetupRoutes(db *gorm.DB) {
 
 	authController := controller.NewAuthController(userService)
 
-	tokenService := service.NewTokenService()
+	tokenService := pkg_service.NewTokenService()
 
 	auth := httpRouter.Group("auth")
 	auth.POST("/register", authController.Register)
 	auth.POST("/login", authController.Login)
-	auth.GET("/me", middleware.AuthUser(tokenService), authController.Me)
+	auth.GET("/me", pkg_middleware.AuthUser(tokenService), authController.Me)
 
 	httpRouter.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"service": "User", "timestamp": time.Now()})

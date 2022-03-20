@@ -96,10 +96,14 @@ github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319145206-796964e1fe84 h1:nj9L
 github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319145206-796964e1fe84/go.mod h1:VCZRofacZM1WguAzKEv+rI/qSMhjKObLQiWI8gCiVZ0=
 github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319152853-70b31c696ac6 h1:kAxVavlBvLaQEPB5j+uqFkv86ytGAYJo9ZsVJoyY2Ec=
 github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220319152853-70b31c696ac6/go.mod h1:VCZRofacZM1WguAzKEv+rI/qSMhjKObLQiWI8gCiVZ0=
+github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220320071912-18ec415ae2db h1:xgBCiW5gP99fmwGAnMOBHuX3GTTe2UlahGOnx9is1l0=
+github.com/nhatlang19/go-monorepo/pkg v0.0.0-20220320071912-18ec415ae2db/go.mod h1:eW2rT+yb+V/0Tsk2dLSIgzG5JQ/BJ1OEsgpf+g5XLGI=
 github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319145206-796964e1fe84 h1:iLUfQ/v++xAWRHbtIpsKomSg4S4WAzTInEdHCtvrhco=
 github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319145206-796964e1fe84/go.mod h1:eveoFG/1q84krM0bDq0CTApJ3uE9tPi9WWyBDkfZypo=
 github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319152853-70b31c696ac6 h1:yowvdvE9vSQ00QOz8+YpUEiecpCoilHVt5KVgk0NSL8=
 github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220319152853-70b31c696ac6/go.mod h1:eveoFG/1q84krM0bDq0CTApJ3uE9tPi9WWyBDkfZypo=
+github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220320071912-18ec415ae2db h1:d206NnwaWTGpACvRqBm7MeX1WCrgEvlwsUNtGnIBKtY=
+github.com/nhatlang19/go-monorepo/services/mail v0.0.0-20220320071912-18ec415ae2db/go.mod h1:eveoFG/1q84krM0bDq0CTApJ3uE9tPi9WWyBDkfZypo=
 github.com/pkg/diff v0.0.0-20210226163009-20ebb0f2a09e/go.mod h1:pJLUxLENpZxwdsKMEsNbx1VGcRFpLqf3715MtcvvzbA=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=

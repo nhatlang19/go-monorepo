@@ -6,8 +6,8 @@ import (
 	"strconv"
 
 	helper "github.com/nhatlang19/go-monorepo/pkg/helper"
+	"github.com/nhatlang19/go-monorepo/pkg/model"
 	grpc_client "github.com/nhatlang19/go-monorepo/services/user/client"
-	"github.com/nhatlang19/go-monorepo/services/user/model"
 	"github.com/nhatlang19/go-monorepo/services/user/repository"
 
 	"log"

@@ -3,7 +3,7 @@ package repository
 import (
 	"log"
 
-	"github.com/nhatlang19/go-monorepo/services/user/model"
+	"github.com/nhatlang19/go-monorepo/pkg/model"
 
 	"gorm.io/gorm"
 )
